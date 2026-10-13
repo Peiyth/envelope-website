@@ -472,7 +472,11 @@ body::before {
   }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
+@media (max-width: 520px) {
+  .scene.is-open .letter-stage {
+    margin-bottom: 100px;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
