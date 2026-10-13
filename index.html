@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3a0714">
+  <title>A Letter From the Heart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <main class="scene">
+    <p class="eyebrow">A LITTLE SOMETHING FROM THE HEART</p>
+    <h1 class="page-title">Im Sorry Ganda!</h1>
+    <p class="intro" id="intro">An apology letter for my beautiful girl</p>
+
+    <section class="letter-stage" aria-label="Interactive letter">
+      <div class="letter" id="letter" aria-hidden="true">
+        <div class="letter-content">
+          <p class="letter-kicker">A note from me to you</p>
+          <h2>hey ganda I'm sorry.</h2>
+          <p>Im sorry. I dont meant it. Gusto lang kitang makausap ng maayos Im really sorryy. i know what have said mustve hurt you, i wasnt thinking im sorry. i have no excuse for my actions, you probably hate me and i deserve that, im sorry. if theres anything i can do to make this right or to undo my actions im willing to do. sorry ganda</p>
+          <p>I hope you can forgive you, im sorry alam ko namang andami mo ng pinoproblema sumabay pako, sorry ganda.</p>
+          <p>I love you so much ganda. Talking to you really make my day.Im not good at writing letters</p>
+          <p class="signoff">Sincerely Yours</p>
+          <p class="signature">Peyt</p>
+          <button class="close-letter" id="closeLetter" type="button">Fold the letter <span aria-hidden="true">↺</span></button>
+        </div>
+      </div>
+
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-pocket"></div>
+        <div class="envelope-flap"></div>
+        <button class="seal" id="openLetter" type="button" aria-label="Open the letter">
+          <span aria-hidden="true">♡</span>
+        </button>
+      </div>
+    </section>
+
+    <button class="open-prompt" id="openPrompt" type="button">
+      <span class="prompt-icon" aria-hidden="true">✉</span>
+      <span>Click the envelope to open</span>
+    </button>
+    <p class="footer-note">Take your time. Read it when you're ready.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
