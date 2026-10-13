@@ -53,7 +53,6 @@ body::before {
   z-index: 0;
 }
 
-
 .scene {
   min-height: 100vh;
   min-height: 100svh;
@@ -66,7 +65,6 @@ body::before {
   padding: 42px 20px 80px;
   text-align: center;
 }
-
 
 .ambient {
   position: fixed;
@@ -121,7 +119,6 @@ body::before {
   perspective: 1200px;
 }
 
-/* Keep the complete envelope below the letter when open. */
 .envelope {
   position: absolute;
   z-index: 1;
@@ -224,6 +221,8 @@ body::before {
   outline-offset: 5px;
 }
 
+/* LETTER */
+
 .letter {
   position: absolute;
   z-index: 2;
@@ -231,15 +230,12 @@ body::before {
   bottom: 7%;
   width: 90%;
   height: 88%;
-
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-
   color: var(--ink);
   text-align: left;
-
   background:
     radial-gradient(
       ellipse at 12% 5%,
@@ -252,13 +248,10 @@ body::before {
       var(--paper) 72%,
       #f1dfca
     );
-
   border: 1px solid rgba(107, 53, 42, .15);
   border-radius: 3px;
   box-shadow: 0 9px 24px rgba(15, 0, 4, .2);
-
   transform: translate(-50%, 20px) scale(.96);
-
   transition:
     transform 1s cubic-bezier(.18, .75, .2, 1),
     height .7s ease,
@@ -321,6 +314,8 @@ body::before {
   cursor: pointer;
 }
 
+/* OPEN BUTTON */
+
 .open-prompt {
   display: inline-flex;
   align-items: center;
@@ -353,6 +348,7 @@ body::before {
   letter-spacing: .025em;
 }
 
+/* OPEN STATE */
 
 .scene.is-open .envelope-flap {
   transform: rotateX(180deg);
@@ -365,24 +361,17 @@ body::before {
   transform: translate(-50%, -35%) scale(.7);
 }
 
-/* Paper rises in front of the envelope and stays centered. */
-
 .scene.is-open .letter {
   z-index: 6;
-  left: 50%;
   bottom: 3%;
+  height: auto;
   min-height: 500px;
-  max-height: 85vh;
   max-height: 85svh;
-  margin-bottom: 20px;
   overflow-y: auto;
-
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-
   transform: translate(-50%, 0) scale(1);
-
   transition:
     transform 1s cubic-bezier(.18, .75, .2, 1),
     height .7s ease,
@@ -390,7 +379,6 @@ body::before {
     opacity .35s ease .2s,
     visibility 0s;
 }
-
 
 .scene.is-open .letter-content {
   opacity: 1;
@@ -420,6 +408,7 @@ body::before {
   .scene {
     justify-content: flex-start;
     padding-top: 11vh;
+    padding-bottom: 80px;
   }
 
   .eyebrow {
@@ -453,10 +442,13 @@ body::before {
     font-size: 1.45rem;
   }
 
+  /* Move the paper lower on phones */
   .scene.is-open .letter {
-    bottom: 28%;
+    bottom: 15%;
     min-height: 420px;
     max-height: 66vh;
+    max-height: 66svh;
+    transform: translate(-50%, 0) scale(1);
   }
 
   .letter-content {
@@ -470,13 +462,13 @@ body::before {
   .open-prompt {
     margin-top: 10px;
   }
-}
 
-@media (max-width: 520px) {
   .scene.is-open .letter-stage {
     margin-bottom: 100px;
   }
 }
+
+/* REDUCED MOTION ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
   *,
